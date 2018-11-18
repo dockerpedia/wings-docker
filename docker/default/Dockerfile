@@ -53,7 +53,8 @@ RUN cp -R /wings-src/target/wings-portal-4.1-SNAPSHOT /usr/local/tomcat/webapps/
 COPY ./config/default/wings-portal.xml /usr/local/tomcat/webapps/wings-portal/META-INF/context.xml
 
 # Install pip requirements
-RUN pip install numpy matplotlib pandas enum flopy
+RUN pip install numpy matplotlib pandas enum 
+RUN pip install flopy
 
 WORKDIR /usr/local/tomcat
 

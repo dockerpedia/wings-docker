@@ -15,6 +15,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         apt-transport-https \
         software-properties-common \
         gnupg2 \
+        python-dev \
         python-setuptools \
         python-tk
 

@@ -14,7 +14,9 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         tk \
         apt-transport-https \
         software-properties-common \
-        gnupg2
+        gnupg2 \
+        python-setuptools \
+        python-tk
 
 # Install Docker
 RUN curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | apt-key add -
@@ -49,6 +51,9 @@ RUN cp -R /wings-src/target/wings-portal-4.1-SNAPSHOT /usr/local/tomcat/webapps/
 
 # Add wings context file to the wings portal webapp
 COPY ./config/default/wings-portal.xml /usr/local/tomcat/webapps/wings-portal/META-INF/context.xml
+
+# Install pip requirements
+RUN pip install numpy matplotlib pandas enum flopy
 
 WORKDIR /usr/local/tomcat
 

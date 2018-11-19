@@ -2,10 +2,10 @@ version: '3'
 
 services:
   wings:
-    image: "kcapd/wings-base"
+    image: "dockerpedia/wings-base"
     build:
       context: .
-      dockerfile: docker/default/Dockerfile
+      dockerfile: Dockerfile
     environment:
       WINGS_MODE: dind
     volumes:

@@ -55,7 +55,7 @@ COPY ./config/default/wings-portal.xml /usr/local/tomcat/webapps/wings-portal/ME
 
 # Install pip requirements
 COPY ./config/requirements.txt /wings-src/
-RUN pip install -r requirements.txt
+RUN while read p; do pip install $p done < requirements.pip
 
 RUN echo "backend : Agg" ~/.config/matplotlib/matplotlibrc
 

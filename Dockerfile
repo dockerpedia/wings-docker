@@ -54,7 +54,7 @@ RUN cp -R /wings-src/target/wings-portal-4.1-SNAPSHOT /usr/local/tomcat/webapps/
 COPY ./config/default/wings-portal.xml /usr/local/tomcat/webapps/wings-portal/META-INF/context.xml
 
 # Install pip requirements
-COPY ./config/requirments.txt /wings-src/
+COPY ./config/requirements.txt /wings-src/
 RUN pip install -r requirements.txt
 
 RUN echo "backend : Agg" ~/.config/matplotlib/matplotlibrc
